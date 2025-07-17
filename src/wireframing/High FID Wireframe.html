@@ -1,0 +1,832 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>RMSP Water Governance System - Wireframes</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            background: #f8fafc;
+            color: #334155;
+            line-height: 1.6;
+        }
+
+        .container {
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        .header {
+            background: linear-gradient(135deg, #1e40af 0%, #3b82f6 100%);
+            color: white;
+            padding: 30px;
+            border-radius: 12px;
+            margin-bottom: 30px;
+            text-align: center;
+        }
+
+        .header h1 {
+            font-size: 2.5em;
+            margin-bottom: 10px;
+            font-weight: 700;
+        }
+
+        .header p {
+            font-size: 1.2em;
+            opacity: 0.9;
+        }
+
+        .wireframe-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(800px, 1fr));
+            gap: 40px;
+            margin-bottom: 40px;
+        }
+
+        .wireframe-card {
+            background: white;
+            border-radius: 12px;
+            padding: 30px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.07);
+            border: 1px solid #e2e8f0;
+        }
+
+        .wireframe-title {
+            font-size: 1.8em;
+            font-weight: 700;
+            margin-bottom: 15px;
+            color: #1e40af;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .page-number {
+            background: #3b82f6;
+            color: white;
+            width: 30px;
+            height: 30px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: bold;
+            font-size: 0.9em;
+        }
+
+        .wireframe-description {
+            color: #64748b;
+            margin-bottom: 25px;
+            font-size: 1.1em;
+        }
+
+        .mockup-frame {
+            border: 2px solid #e2e8f0;
+            border-radius: 8px;
+            padding: 20px;
+            background: #fafafa;
+            margin-bottom: 20px;
+            min-height: 400px;
+        }
+
+        .mockup-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 15px 20px;
+            background: #1e40af;
+            color: white;
+            border-radius: 6px;
+            margin-bottom: 20px;
+        }
+
+        .mockup-nav {
+            display: flex;
+            gap: 15px;
+        }
+
+        .nav-item {
+            padding: 8px 15px;
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 4px;
+            font-size: 0.9em;
+        }
+
+        .nav-item.active {
+            background: rgba(255, 255, 255, 0.2);
+            font-weight: bold;
+        }
+
+        .mockup-content {
+            display: grid;
+            gap: 20px;
+        }
+
+        .feature-box {
+            background: white;
+            border: 1px solid #d1d5db;
+            border-radius: 6px;
+            padding: 15px;
+            margin-bottom: 15px;
+        }
+
+        .feature-title {
+            font-weight: 600;
+            color: #374151;
+            margin-bottom: 8px;
+        }
+
+        .feature-content {
+            color: #6b7280;
+            font-size: 0.9em;
+        }
+
+        .button-large {
+            background: #10b981;
+            color: white;
+            border: none;
+            padding: 15px 30px;
+            border-radius: 8px;
+            font-size: 1.1em;
+            font-weight: 600;
+            cursor: pointer;
+            margin: 10px 5px;
+        }
+
+        .button-alert {
+            background: #ef4444;
+            color: white;
+            border: none;
+            padding: 12px 25px;
+            border-radius: 6px;
+            font-weight: 600;
+            cursor: pointer;
+            margin: 5px;
+        }
+
+        .button-secondary {
+            background: #6b7280;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 6px;
+            cursor: pointer;
+            margin: 5px;
+        }
+
+        .map-placeholder {
+            background: #e5e7eb;
+            height: 200px;
+            border-radius: 6px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #6b7280;
+            font-style: italic;
+            margin-bottom: 15px;
+        }
+
+        .chart-placeholder {
+            background: #f3f4f6;
+            height: 120px;
+            border-radius: 6px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #6b7280;
+            font-style: italic;
+            margin-bottom: 15px;
+        }
+
+        .alert-box {
+            background: #fef3c7;
+            border: 1px solid #f59e0b;
+            border-radius: 6px;
+            padding: 15px;
+            margin-bottom: 15px;
+        }
+
+        .alert-critical {
+            background: #fee2e2;
+            border: 1px solid #ef4444;
+        }
+
+        .alert-success {
+            background: #dcfce7;
+            border: 1px solid #10b981;
+        }
+
+        .user-flow-legend {
+            background: #f1f5f9;
+            border: 1px solid #cbd5e1;
+            border-radius: 8px;
+            padding: 20px;
+            margin-bottom: 20px;
+        }
+
+        .user-flow-title {
+            font-weight: 700;
+            color: #1e40af;
+            margin-bottom: 10px;
+        }
+
+        .flow-path {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            margin-bottom: 8px;
+        }
+
+        .flow-step {
+            background: #3b82f6;
+            color: white;
+            width: 25px;
+            height: 25px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 0.8em;
+            font-weight: bold;
+        }
+
+        .flow-arrow {
+            color: #6b7280;
+            font-weight: bold;
+        }
+
+        .accessibility-notes {
+            background: #f0f9ff;
+            border: 1px solid #0ea5e9;
+            border-radius: 6px;
+            padding: 15px;
+            margin-top: 15px;
+        }
+
+        .accessibility-title {
+            font-weight: 600;
+            color: #0ea5e9;
+            margin-bottom: 8px;
+        }
+
+        .advanced-options {
+            background: #fef7ff;
+            border: 1px solid #a855f7;
+            border-radius: 6px;
+            padding: 15px;
+            margin-top: 15px;
+        }
+
+        .advanced-title {
+            font-weight: 600;
+            color: #a855f7;
+            margin-bottom: 8px;
+        }
+
+        .chat-interface {
+            background: #f9fafb;
+            border: 1px solid #d1d5db;
+            border-radius: 6px;
+            padding: 15px;
+            max-height: 200px;
+            overflow-y: auto;
+        }
+
+        .chat-message {
+            background: white;
+            border-radius: 4px;
+            padding: 10px;
+            margin-bottom: 8px;
+            box-shadow: 0 1px 2px rgba(0, 0, 0, 0.05);
+        }
+
+        .message-user {
+            background: #dbeafe;
+            text-align: right;
+        }
+
+        .message-system {
+            background: #f3f4f6;
+        }
+
+        .dashboard-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 15px;
+        }
+
+        .metric-card {
+            background: white;
+            border: 1px solid #e5e7eb;
+            border-radius: 6px;
+            padding: 15px;
+            text-align: center;
+        }
+
+        .metric-value {
+            font-size: 2em;
+            font-weight: bold;
+            color: #1e40af;
+        }
+
+        .metric-label {
+            color: #6b7280;
+            font-size: 0.9em;
+        }
+
+        .forum-post {
+            background: white;
+            border: 1px solid #e5e7eb;
+            border-radius: 4px;
+            padding: 12px;
+            margin-bottom: 10px;
+        }
+
+        .post-title {
+            font-weight: 600;
+            color: #374151;
+            margin-bottom: 5px;
+        }
+
+        .post-meta {
+            color: #6b7280;
+            font-size: 0.8em;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>RMSP Water Governance System</h1>
+            <p>High-Fidelity Wireframes | Integrated Water Management Platform</p>
+        </div>
+
+        <div class="user-flow-legend">
+            <div class="user-flow-title">User Journey Flows</div>
+            <div class="flow-path">
+                <strong>End User (Vulnerable Resident):</strong>
+                <div class="flow-step">1</div>
+                <div class="flow-arrow">→</div>
+                <div class="flow-step">2</div>
+                <div class="flow-arrow">→</div>
+                <div class="flow-step">3</div>
+                <div class="flow-arrow">→</div>
+                <div class="flow-step">5</div>
+                <span style="color: #6b7280; font-size: 0.9em;">(via community leader)</span>
+            </div>
+            <div class="flow-path">
+                <strong>Intermediate User (Community Leader):</strong>
+                <div class="flow-step">1</div>
+                <div class="flow-arrow">→</div>
+                <div class="flow-step">2</div>
+                <div class="flow-arrow">→</div>
+                <div class="flow-step">3</div>
+                <div class="flow-arrow">→</div>
+                <div class="flow-step">4</div>
+                <div class="flow-arrow">→</div>
+                <div class="flow-step">5</div>
+            </div>
+            <div class="flow-path">
+                <strong>Advanced User (Manager/Activist):</strong>
+                <div class="flow-step">1</div>
+                <div class="flow-arrow">→</div>
+                <div class="flow-step">2</div>
+                <div class="flow-arrow">→</div>
+                <div class="flow-step">4</div>
+                <div class="flow-arrow">→</div>
+                <div class="flow-step">5</div>
+                <div class="flow-arrow">→</div>
+                <div class="flow-step">3</div>
+            </div>
+        </div>
+
+        <div class="wireframe-grid">
+            <!-- Page 1: Water Vulnerability Mapping -->
+            <div class="wireframe-card">
+                <div class="wireframe-title">
+                    <div class="page-number">1</div>
+                    Water Vulnerability Mapping
+                </div>
+                <div class="wireframe-description">
+                    Visual interface with interactive map identifying RMSP's most critical areas; large buttons for
+                    simple navigation; allows users to check if their region is vulnerable, showing socio-environmental
+                    indicators.
+                </div>
+
+                <div class="mockup-frame">
+                    <div class="mockup-header">
+                        <div style="font-weight: bold;">RMSP Water Vulnerability Map</div>
+                        <div class="mockup-nav">
+                            <div class="nav-item active">Map</div>
+                            <div class="nav-item">Alerts</div>
+                            <div class="nav-item">Help</div>
+                        </div>
+                    </div>
+
+                    <div class="mockup-content">
+                        <div class="map-placeholder">
+                            Interactive Map of RMSP Region<br>
+                            <small>Click areas to see vulnerability details</small>
+                        </div>
+
+                        <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 15px;">
+                            <button class="button-large">🔍 Check My Area</button>
+                            <button class="button-large">📍 Find Location</button>
+                        </div>
+
+                        <div class="feature-box">
+                            <div class="feature-title">Your Region Status</div>
+                            <div class="alert-box alert-critical">
+                                <strong>HIGH RISK</strong> - Your area is classified as highly vulnerable to water
+                                scarcity
+                            </div>
+                            <div class="feature-content">
+                                • Population density: 12,000 people/km²<br>
+                                • Water access reliability: 68%<br>
+                                • Socio-economic vulnerability index: 7.2/10
+                            </div>
+                        </div>
+
+                        <div style="display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 10px;">
+                            <button class="button-alert">🚨 Report Issue</button>
+                            <button class="button-secondary">📊 View Details</button>
+                            <button class="button-secondary">🔊 Audio Guide</button>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="accessibility-notes">
+                    <div class="accessibility-title">🔧 Accessibility Features</div>
+                    • Large, high-contrast buttons for easy navigation<br>
+                    • Audio descriptions for map elements<br>
+                    • Simple language and clear visual indicators<br>
+                    • Touch-friendly interface for mobile devices
+                </div>
+
+                <div class="advanced-options">
+                    <div class="advanced-title">⚙️ Advanced Testing Options</div>
+                    • Simulate different vulnerability levels<br>
+                    • Test offline mode functionality<br>
+                    • Multi-language support toggle<br>
+                    • Screen reader compatibility testing
+                </div>
+            </div>
+
+            <!-- Page 2: Continuous Monitoring and Alert System -->
+            <div class="wireframe-card">
+                <div class="wireframe-title">
+                    <div class="page-number">2</div>
+                    Continuous Monitoring and Alert System
+                </div>
+                <div class="wireframe-description">
+                    Displays real-time status of reservoir levels and warnings about supply interruptions by region;
+                    sends configurable notifications via SMS and app; includes simple language and accessible resources.
+                </div>
+
+                <div class="mockup-frame">
+                    <div class="mockup-header">
+                        <div style="font-weight: bold;">Real-Time Water Monitoring</div>
+                        <div class="mockup-nav">
+                            <div class="nav-item">Map</div>
+                            <div class="nav-item active">Alerts</div>
+                            <div class="nav-item">Settings</div>
+                        </div>
+                    </div>
+
+                    <div class="mockup-content">
+                        <div class="alert-box alert-critical">
+                            <strong>CRITICAL ALERT</strong> - Water supply interruption scheduled for your area tomorrow
+                            6AM-2PM
+                        </div>
+
+                        <div class="dashboard-grid">
+                            <div class="metric-card">
+                                <div class="metric-value">34%</div>
+                                <div class="metric-label">Cantareira System</div>
+                            </div>
+                            <div class="metric-card">
+                                <div class="metric-value">67%</div>
+                                <div class="metric-label">Alto Tietê System</div>
+                            </div>
+                            <div class="metric-card">
+                                <div class="metric-value">45%</div>
+                                <div class="metric-label">Guarapiranga System</div>
+                            </div>
+                            <div class="metric-card">
+                                <div class="metric-value">78%</div>
+                                <div class="metric-label">Rio Grande System</div>
+                            </div>
+                        </div>
+
+                        <div class="chart-placeholder">
+                            Water Level Trends - Last 30 Days
+                        </div>
+
+                        <div class="feature-box">
+                            <div class="feature-title">Your Area Status</div>
+                            <div class="alert-box alert-success">
+                                <strong>NORMAL</strong> - Water supply is currently stable in your region
+                            </div>
+                            <div class="feature-content">
+                                Next scheduled maintenance: No maintenance planned<br>
+                                Current pressure: Normal (4.2 bar)<br>
+                                Quality index: Excellent (98.5/100)
+                            </div>
+                        </div>
+
+                        <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 10px;">
+                            <button class="button-large">📱 Configure Alerts</button>
+                            <button class="button-large">🔊 Listen to Status</button>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="accessibility-notes">
+                    <div class="accessibility-title">🔧 Accessibility Features</div>
+                    • Voice alerts and audio status updates<br>
+                    • Simple color-coded warning system<br>
+                    • SMS notifications for basic phones<br>
+                    • Large text and high contrast mode
+                </div>
+
+                <div class="advanced-options">
+                    <div class="advanced-title">⚙️ Advanced Testing Options</div>
+                    • Simulate different alert levels<br>
+                    • Test notification delivery systems<br>
+                    • Offline data caching validation<br>
+                    • Multi-device synchronization testing
+                </div>
+            </div>
+
+            <!-- Page 3: Multi-level Communication -->
+            <div class="wireframe-card">
+                <div class="wireframe-title">
+                    <div class="page-number">3</div>
+                    Multi-level Communication
+                </div>
+                <div class="wireframe-description">
+                    Direct and simplified channel for residents to report supply problems and receive responses from
+                    authorities; includes chat, complaint forms and help lines; integrates municipal, state and federal
+                    levels.
+                </div>
+
+                <div class="mockup-frame">
+                    <div class="mockup-header">
+                        <div style="font-weight: bold;">Communication Center</div>
+                        <div class="mockup-nav">
+                            <div class="nav-item">Report</div>
+                            <div class="nav-item active">Chat</div>
+                            <div class="nav-item">Status</div>
+                        </div>
+                    </div>
+
+                    <div class="mockup-content">
+                        <div class="feature-box">
+                            <div class="feature-title">Quick Actions</div>
+                            <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 10px; margin-top: 10px;">
+                                <button class="button-alert">🚨 Report Emergency</button>
+                                <button class="button-large">💬 Start Chat</button>
+                                <button class="button-secondary">📝 File Complaint</button>
+                                <button class="button-secondary">📞 Call Help Line</button>
+                            </div>
+                        </div>
+
+                        <div class="chat-interface">
+                            <div class="chat-message message-user">
+                                Water has been cut off in my building for 3 days. When will it be restored?
+                            </div>
+                            <div class="chat-message message-system">
+                                Thank you for reporting. We've escalated your case to the Municipal Water Authority.
+                                Case ID: #WR-2024-0847
+                            </div>
+                            <div class="chat-message message-system">
+                                Update: Technical team dispatched to your area. Expected restoration: 6-8 hours.
+                            </div>
+                        </div>
+
+                        <div class="feature-box">
+                            <div class="feature-title">My Reports</div>
+                            <div class="feature-content">
+                                • Case #WR-2024-0847 - Water outage - <strong>IN PROGRESS</strong><br>
+                                • Case #WR-2024-0823 - Low pressure - <strong>RESOLVED</strong><br>
+                                • Case #WR-2024-0801 - Quality issue - <strong>RESOLVED</strong>
+                            </div>
+                        </div>
+
+                        <div style="display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 10px;">
+                            <button class="button-secondary">Municipal</button>
+                            <button class="button-secondary">State</button>
+                            <button class="button-secondary">Federal</button>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="accessibility-notes">
+                    <div class="accessibility-title">🔧 Accessibility Features</div>
+                    • Voice-to-text for report submission<br>
+                    • Simple language in all communications<br>
+                    • Multiple contact methods (chat, phone, form)<br>
+                    • Clear status updates and case tracking
+                </div>
+
+                <div class="advanced-options">
+                    <div class="advanced-title">⚙️ Advanced Testing Options</div>
+                    • Test multi-level escalation workflows<br>
+                    • Simulate different response times<br>
+                    • Language translation capabilities<br>
+                    • Integration with emergency services
+                </div>
+            </div>
+
+            <!-- Page 4: Integrated Governance Dashboard -->
+            <div class="wireframe-card">
+                <div class="wireframe-title">
+                    <div class="page-number">4</div>
+                    Integrated Governance Dashboard
+                </div>
+                <div class="wireframe-description">
+                    Focused on managers and community leaders, consolidates decisions, data and indicators from multiple
+                    entities; presents charts, alerts and plans in execution; helps coordinate supply policies.
+                </div>
+
+                <div class="mockup-frame">
+                    <div class="mockup-header">
+                        <div style="font-weight: bold;">Governance Dashboard</div>
+                        <div class="mockup-nav">
+                            <div class="nav-item active">Overview</div>
+                            <div class="nav-item">Plans</div>
+                            <div class="nav-item">Coordination</div>
+                        </div>
+                    </div>
+
+                    <div class="mockup-content">
+                        <div class="dashboard-grid">
+                            <div class="metric-card">
+                                <div class="metric-value">23</div>
+                                <div class="metric-label">Active Alerts</div>
+                            </div>
+                            <div class="metric-card">
+                                <div class="metric-value">8</div>
+                                <div class="metric-label">Emergency Cases</div>
+                            </div>
+                            <div class="metric-card">
+                                <div class="metric-value">156</div>
+                                <div class="metric-label">Reports Today</div>
+                            </div>
+                            <div class="metric-card">
+                                <div class="metric-value">94%</div>
+                                <div class="metric-label">Response Rate</div>
+                            </div>
+                        </div>
+
+                        <div class="feature-box">
+                            <div class="feature-title">Priority Actions Required</div>
+                            <div class="alert-box alert-critical">
+                                <strong>IMMEDIATE</strong> - Approve emergency water distribution for East Zone
+                            </div>
+                            <div class="alert-box">
+                                <strong>URGENT</strong> - Review budget allocation for infrastructure repairs
+                            </div>
+                            <div class="alert-box alert-success">
+                                <strong>INFO</strong> - Monthly coordination meeting scheduled for tomorrow
+                            </div>
+                        </div>
+
+                        <div class="chart-placeholder">
+                            Multi-Entity Coordination Timeline
+                        </div>
+
+                        <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 10px;">
+                            <button class="button-large">📊 View Full Reports</button>
+                            <button class="button-large">⚙️ Coordination Tools</button>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="accessibility-notes">
+                    <div class="accessibility-title">🔧 Management Features</div>
+                    • Real-time data consolidation from multiple sources<br>
+                    • Automated alert prioritization system<br>
+                    • Cross-agency collaboration tools<br>
+                    • Decision tracking and transparency logs
+                </div>
+
+                <div class="advanced-options">
+                    <div class="advanced-title">⚙️ Advanced Testing Options</div>
+                    • Simulate multi-agency data integration<br>
+                    • Test decision workflow automation<br>
+                    • Role-based access control validation<br>
+                    • Performance under high load scenarios
+                </div>
+            </div>
+
+            <!-- Page 5: Social Participation and Transparency Portal -->
+            <div class="wireframe-card">
+                <div class="wireframe-title">
+                    <div class="page-number">5</div>
+                    Social Participation and Transparency Portal
+                </div>
+                <div class="wireframe-description">
+                    Space where users can consult projects, send suggestions, participate in public consultations and
+                    monitor resource application; has news sections, forums and public indicators.
+                </div>
+
+                <div class="mockup-frame">
+                    <div class="mockup-header">
+                        <div style="font-weight: bold;">Social Participation Portal</div>
+                        <div class="mockup-nav">
+                            <div class="nav-item active">Forum</div>
+                            <div class="nav-item">Projects</div>
+                            <div class="nav-item">Consultations</div>
+                        </div>
+                    </div>
+
+                    <div class="mockup-content">
+                        <div class="feature-box">
+                            <div class="feature-title">Active Public Consultations</div>
+                            <div class="feature-content">
+                                <div class="alert-box">
+                                    <strong>Open for Comments</strong> - New Water Treatment Plant Proposal for South
+                                    Zone<br>
+                                    <small>Deadline: 15 days remaining | 234 comments received</small>
+                                </div>
+                                <button class="button-large">💬 Participate</button>
+                            </div>
+                        </div>
+
+                        <div class="feature-box">
+                            <div class="feature-title">Community Forum</div>
+                            <div class="forum-post">
+                                <div class="post-title">Water quality improvements in North Zone</div>
+                                <div class="post-meta">Posted by Maria S. - Community Leader | 12 replies</div>
+                            </div>
+                            <div class="forum-post">
+                                <div class="post-title">Suggestion: Mobile water trucks for emergencies</div>
+                                <div class="post-meta">Posted by João R. - Resident | 8 replies</div>
+                            </div>
+                            <div class="forum-post">
+                                <div class="post-title">Budget transparency request</div>
+                                <div class="post-meta">Posted by Ana L. - Activist | 23 replies</div>
+                            </div>
+                        </div>
+
+                        <div class="feature-box">
+                            <div class="feature-title">Resource Monitoring</div>
+                            <div class="chart-placeholder">
+                                Budget Allocation and Spending Transparency
+                            </div>
+                            <div class="feature-content">
+                                Infrastructure investments: R$ 2.3M allocated, R$ 1.8M spent<br>
+                                Emergency response fund: R$ 500K allocated, R$ 320K spent<br>
+                                Community programs: R$ 150K allocated, R$ 89K spent
+                            </div>
+                        </div>
+
+                        <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 10px;">
+                            <button class="button-large">📝 Submit Suggestion</button>
+                            <button class="button-large">📊 View Transparency</button>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="accessibility-notes">
+                    <div class="accessibility-title">🔧 Participation Features</div>
+                    • Multi-language support for diverse communities<br>
+                    • Audio versions of consultation documents<br>
+                    • Simple voting and feedback mechanisms<br>
+                    • Mobile-first design for widespread access
+                </div>
+
+                <div class="advanced-options">
+                    <div class="advanced-title">⚙️ Advanced Testing Options</div>
+                    • Test engagement analytics and metrics<br>
+                    • Simulate large-scale public consultations<br>
+                    • Content moderation and spam filtering<br>
+                    • Integration with external transparency databases
+                </div>
+            </div>
+        </div>
+
+        <div style="text-align: center; background: #f8fafc; padding: 30px; border-radius: 12px; margin-top: 40px;">
+            <h3 style="color: #1e40af; margin-bottom: 15px;">Wireframe Specifications</h3>
+            <p style="color: #64748b; max-width: 800px; margin: 0 auto; line-height: 1.6;">
+                These high-fidelity wireframes represent the core functionality of the RMSP Water Governance System,
+                designed to address urban water scarcity through integrated governance, real-time monitoring, and
+                multi-level communication. Each interface prioritizes accessibility, simplicity, and user-centered
+                design principles to serve diverse user groups effectively.
+            </p>
+        </div>
+    </div>
+</body>
+
+</html>
