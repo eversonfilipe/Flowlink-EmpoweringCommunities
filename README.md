@@ -4,6 +4,10 @@
 
 ---
 
+<img width="1024" height="1024" alt="ChatGPT Image 21 de jul  de 2025, 21_33_24" src="https://github.com/user-attachments/assets/fe29552c-12a9-457c-b1b8-73853ee8f45c" />
+
+---
+
 ## 🌎 Overview
 
 **FlowLink** is an open, participatory urban water governance platform designed to address the critical challenge of urban water scarcity in the São Paulo Metropolitan Region (RMSP), Brazil. Born from the intersection of social need, technical innovation, and grassroots activism, FlowLink unifies real-time monitoring, geospatial mapping, and multi-level communication to empower residents, leaders, and authorities.
@@ -17,7 +21,9 @@ Fragmented public-private governance, lack of transparency, slow crisis response
 
 ## 🚀 Project Story
 
-Millions in São Paulo’s periphery face daily uncertainty: dry taps, long queues, and silence from distant institutions. FlowLink emerged as a collective answer—connecting vulnerable residents, community leaders, and policy-makers through actionable data, transparent communication, and shared oversight.
+Millions in São Paulo’s periphery face daily uncertainty: dry taps, long queues, and silence from distant institutions. FlowLink emerged as a collective answer—connecting vulnerable residents, community leaders, and policy-makers through actionable data, transparent communication, and shared oversight. <br>
+<img width="1905" height="901" alt="Captura de tela 2025-07-17 131550" src="https://github.com/user-attachments/assets/28c2cde2-66e0-4e41-8f06-e92ace3c43f3" />
+
 
 ---
 
@@ -140,6 +146,8 @@ Maps vulnerabilities, tracks violations, advocates for water justice
 ```
 In the sprawling urban landscapes of São Paulo’s periphery, millions face daily water uncertainty. During the 2013–2015 crisis, community voices went unheard amid institutional fragmentation. FlowLink became their answer—leveraging real-time data and transparent, multi-level communication. Co-created with vulnerable residents, leaders, and activists, FlowLink restored agency, transparency, and connection. Its impact: faster response, prioritized resources, and exponential community engagement. FlowLink proves that when technology, transparency, and collective action unite, even the most fragmented systems can be rewired for equity.
 ```
+
+<img width="1896" height="896" alt="Captura de tela 2025-07-17 131458" src="https://github.com/user-attachments/assets/c5723986-ff0e-4f01-bf57-ef82976901cc" />
 
 ---
 
